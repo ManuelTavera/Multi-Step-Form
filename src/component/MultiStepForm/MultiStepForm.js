@@ -4,11 +4,13 @@ import styled from "styled-components";
 
 import { COLORS } from "@/constant";
 import StepsContainer from "@/component/StepsContainer";
+import FormContainer from "@/component/FormContainer";
 
 function MultiStepForm() {
   return (
     <Wrapper>
       <StepsContainer />
+      <FormContainer />
     </Wrapper>
   );
 }
