@@ -13,11 +13,15 @@ const HEADING_COPIES = {
   2: {
     title: "Select your plan",
     subtitle: "You have the option of monthly or yearly billing.",
+  },
+  3: {
+    title: "Pick add-ons",
+    subtitle: "Add-ons help enhance your gaming experience.",
   }
 };
 
 function FormContainer() {
-  const { title, subtitle } = HEADING_COPIES[2];
+  const { title, subtitle } = HEADING_COPIES[3];
   return (
     <Wrapper>
       <FormHeader title={title} subtitle={subtitle} />
