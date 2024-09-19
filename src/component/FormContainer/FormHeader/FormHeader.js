@@ -2,13 +2,11 @@ import React from "react";
 
 import { Wrapper, Title, Subtitle } from "./FormHeader.style";
 
-function FormHeader() {
+function FormHeader({ title, subtitle }) {
   return (
     <Wrapper>
-      <Title>Personal info</Title>
-      <Subtitle>
-        Please provide your name, email address, and phone number.
-      </Subtitle>
+      <Title>{title}</Title>
+      <Subtitle>{subtitle}</Subtitle>
     </Wrapper>
   );
 }
