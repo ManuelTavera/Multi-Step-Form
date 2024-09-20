@@ -1,6 +1,6 @@
 "use client";
 import styled from "styled-components";
-import { COLORS } from "@/constant";
+import { COLORS, MEDIA_QUERIES } from "@/constant";
 
 export const Wrapper = styled.button`
   display: flex;
@@ -33,10 +33,14 @@ export const TextWrapper = styled.span`
   flex-direction: column;
   align-items: flex-start;
   margin-left: 20px;
+
+  ${MEDIA_QUERIES["tablet"]} {
+    margin-left: 10px;
+  }
 `;
 
 export const Text = styled.span`
-  font-size: ${13 / 16}rem;
+  font-size: ${12 / 16}rem;
   color: ${COLORS["lightGray"]};
   font-weight: 400;
 `;
@@ -46,4 +50,8 @@ export const Title = styled.span`
   font-weight: bold;
   color: #fff;
   letter-spacing: 0.1rem;
+
+  ${MEDIA_QUERIES["tablet"]} {
+    font-size: ${12 / 16}rem;
+  }
 `;

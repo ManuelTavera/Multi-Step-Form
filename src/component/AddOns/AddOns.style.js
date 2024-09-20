@@ -1,5 +1,5 @@
 "use client";
-import { COLORS } from "@/constant";
+import { COLORS, MEDIA_QUERIES } from "@/constant";
 import styled from "styled-components";
 
 export const Wrapper = styled.label`
@@ -17,6 +17,10 @@ export const Wrapper = styled.label`
 
   &:has(> input:checked) {
     border: 1px solid ${COLORS["purplishBlue"]};
+  }
+
+  ${MEDIA_QUERIES["tablet"]}{
+    padding: 15px;
   }
 `;
 

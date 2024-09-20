@@ -35,7 +35,7 @@ function FormContainer() {
   return (
     <Wrapper>
       {currentSteps !== 5 && <FormHeader title={title} subtitle={subtitle} />}
-      <FormBody />
+      <FormBody currentSteps={currentSteps}/>
       {currentSteps !== 5 && (
         <ActionWrapper>
           <Button>Go Back</Button>

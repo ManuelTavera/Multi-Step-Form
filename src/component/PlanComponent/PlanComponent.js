@@ -14,8 +14,10 @@ function PlanComponent({ title, pricing, img, name }) {
       <IconWrapper>
         <img src={img} />
       </IconWrapper>
-      <Title>{title}</Title>
-      <Pricing>{pricing}</Pricing>
+      <div>
+        <Title>{title}</Title>
+        <Pricing>{pricing}</Pricing>
+      </div>
       <RadioButton type="radio" name={name} />
     </Wrapper>
   );

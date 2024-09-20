@@ -1,11 +1,15 @@
 "use client";
 import styled from "styled-components";
 import * as Switch from "@radix-ui/react-switch";
-import { COLORS } from "@/constant";
+import { COLORS, MEDIA_QUERIES } from "@/constant";
 
 export const Wrapper = styled.div`
   display: flex;
   gap: 20px;
+
+  ${MEDIA_QUERIES["tablet"]} {
+    flex-direction: column;
+  }
 `;
 
 export const ButtonWrapper = styled.div`

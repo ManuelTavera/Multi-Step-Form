@@ -10,3 +10,13 @@ export const COLORS = {
   alabaster: "hsl(231, 100%, 99%)",
   white: "hsl(0, 0%, 100%)",
 };
+
+export const BREAKPOINTS = {
+  tablet: 960,
+  mobile: 660,
+};
+
+export const MEDIA_QUERIES = {
+  tablet: `@media screen and (max-width: ${BREAKPOINTS["tablet"]}px)`,
+  mobile: `@media screen and (max-width: ${BREAKPOINTS["mobile"]}px)`,
+};

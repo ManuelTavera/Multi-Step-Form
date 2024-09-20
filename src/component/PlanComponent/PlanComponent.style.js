@@ -1,7 +1,7 @@
 "use client";
 import styled from "styled-components";
 
-import { COLORS } from "@/constant";
+import { COLORS, MEDIA_QUERIES } from "@/constant";
 
 export const Wrapper = styled.div`
   padding: 15px 10px;
@@ -19,10 +19,20 @@ export const Wrapper = styled.div`
     outline: 1px solid ${COLORS["purplishBlue"]};
     outline-offset: 2px;
   }
+
+  ${MEDIA_QUERIES["tablet"]} {
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 export const IconWrapper = styled.div`
   margin-bottom: 40px;
+
+  ${MEDIA_QUERIES["tablet"]} {
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
 `;
 
 export const Title = styled.p`

@@ -17,7 +17,7 @@ function FormStepTwo() {
         <ButtonWrapper>
           <PlanComponent
             img={"/images/icon-arcade.svg"}
-            title="Advanced"
+            title="Arcade"
             pricing={"$9/mo"}
             name="plan"
           />
@@ -33,7 +33,7 @@ function FormStepTwo() {
         <ButtonWrapper>
           <PlanComponent
             img={"/images/icon-pro.svg"}
-            title="Advanced"
+            title="Pro"
             pricing={"$12/mo"}
             name="plan"
           />
