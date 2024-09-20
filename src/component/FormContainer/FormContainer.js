@@ -1,7 +1,12 @@
 import React from "react";
 
 import Button from "@/component/Button";
-import { Wrapper, ActionWrapper, SubWrapper, ButtonNext } from "./FormContainer.style";
+import {
+  Wrapper,
+  ActionWrapper,
+  SubWrapper,
+  ButtonNext,
+} from "./FormContainer.style";
 import FormBody from "./FormBody";
 import FormHeader from "./FormHeader";
 
@@ -31,7 +36,7 @@ const HEADING_COPIES = {
 function FormContainer({ currentStep }) {
   const { title, subtitle } = HEADING_COPIES[currentStep];
   return (
-    <Wrapper>
+    <Wrapper onSubmit={(e) => e.preventDefault()}>
       <SubWrapper>
         {currentStep !== 5 && <FormHeader title={title} subtitle={subtitle} />}
         <FormBody currentStep={currentStep} />

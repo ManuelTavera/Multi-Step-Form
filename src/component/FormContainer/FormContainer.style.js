@@ -23,7 +23,7 @@ export const SubWrapper = styled.div`
   ${MEDIA_QUERIES["mobile"]} {
     background-color: ${COLORS["white"]};
     margin: 0px 15px;
-    margin-top: -100px;
+    margin-top: -75px;
     border-radius: 10px;
     overflow: hidden;
     padding: 30px 20px;
@@ -40,6 +40,7 @@ export const ActionWrapper = styled.div`
   ${MEDIA_QUERIES["mobile"]} {
     background-color: ${COLORS["white"]};
     padding: 20px;
+    box-shadow: 0 -3px 10px hsl(0deg 0% 0% / 0.075);
   }
 `;
 
