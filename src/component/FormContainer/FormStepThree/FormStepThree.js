@@ -16,7 +16,7 @@ const ADD_ONS = [
   },
   {
     name: "Customizable Profile",
-    description: "Access to multiplayer games",
+    description: "Custom theme on your profile",
     pricing: "+$2/mo",
   },
 ];

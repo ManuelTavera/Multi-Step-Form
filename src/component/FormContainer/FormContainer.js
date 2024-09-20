@@ -29,7 +29,7 @@ const HEADING_COPIES = {
 };
 
 function FormContainer() {
-  const currentSteps = 2;
+  const currentSteps = 3;
 
   const { title, subtitle } = HEADING_COPIES[currentSteps];
   return (
