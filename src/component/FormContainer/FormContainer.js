@@ -17,21 +17,36 @@ const HEADING_COPIES = {
   3: {
     title: "Pick add-ons",
     subtitle: "Add-ons help enhance your gaming experience.",
+  },
+  4: {
+    title: "Finishing up",
+    subtitle: "Double-check everything looks OK before confirming.",
+  },
+  5: {
+    title: "",
+    subtitle: "",
   }
 };
 
 function FormContainer() {
-  const { title, subtitle } = HEADING_COPIES[3];
+  const currentSteps = 5;
+
+  const { title, subtitle } = HEADING_COPIES[currentSteps];
   return (
     <Wrapper>
-      <FormHeader title={title} subtitle={subtitle} />
+      {currentSteps !== 5 && <FormHeader title={title} subtitle={subtitle} />}
       <FormBody />
-      <ActionWrapper>
-        <Button>Go Back</Button>
-        <Button variant="continue" type="submit">
-          Next Step
-        </Button>
-      </ActionWrapper>
+      {currentSteps !== 5 && (
+        <ActionWrapper>
+          <Button>Go Back</Button>
+          <Button
+            variant={currentSteps === 4 ? "submit" : "continue"}
+            type="submit"
+          >
+            {currentSteps === 4 ? "Confirm" : "Next Step"}
+          </Button>
+        </ActionWrapper>
+      )}
     </Wrapper>
   );
 }

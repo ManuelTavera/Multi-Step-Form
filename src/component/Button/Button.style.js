@@ -7,8 +7,9 @@ export const Wrapper = styled.button`
   background: var(--background-color);
   border: none;
   color: var(--text-color);
-  padding: 10px 20px;
-  border-radius: 7px;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  min-width: var(--min-width);
 
   &:hover {
     cursor: pointer;
