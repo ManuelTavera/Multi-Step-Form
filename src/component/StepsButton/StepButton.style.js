@@ -9,6 +9,12 @@ export const Wrapper = styled.button`
   border: none;
   align-items: center;
   cursor: pointer;
+
+  ${MEDIA_QUERIES["mobile"]} {
+    justify-content: center;
+    width: auto;
+    align-items: flex-start;
+  }
 `;
 
 export const Number = styled.span`
@@ -36,6 +42,10 @@ export const TextWrapper = styled.span`
 
   ${MEDIA_QUERIES["tablet"]} {
     margin-left: 10px;
+  }
+
+  ${MEDIA_QUERIES["mobile"]} {
+    display: none;
   }
 `;
 

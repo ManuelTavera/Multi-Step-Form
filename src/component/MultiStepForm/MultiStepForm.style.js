@@ -1,7 +1,7 @@
 "use client";
 import styled from "styled-components";
 
-import { COLORS } from "@/constant";
+import { COLORS, MEDIA_QUERIES } from "@/constant";
 
 export const Wrapper = styled.div`
   max-width: 1000px;
@@ -14,4 +14,14 @@ export const Wrapper = styled.div`
   padding: 20px;
   display: flex;
   margin: 0 30px;
+
+  ${MEDIA_QUERIES["mobile"]} {
+    margin: 0;
+    max-width: none;
+    overflow: initial;
+    padding: 0;
+    max-height: none;
+    background-color: ${COLORS["lightBlue"]};
+    flex-direction: column;
+  }
 `;

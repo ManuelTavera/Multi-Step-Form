@@ -1,7 +1,7 @@
 import React from "react";
 
 import Button from "@/component/Button";
-import { Wrapper, ActionWrapper } from "./FormContainer.style";
+import { Wrapper, ActionWrapper, SubWrapper, ButtonNext } from "./FormContainer.style";
 import FormBody from "./FormBody";
 import FormHeader from "./FormHeader";
 
@@ -25,26 +25,28 @@ const HEADING_COPIES = {
   5: {
     title: "",
     subtitle: "",
-  }
+  },
 };
 
 function FormContainer() {
-  const currentSteps = 5;
+  const currentSteps = 1;
 
   const { title, subtitle } = HEADING_COPIES[currentSteps];
   return (
     <Wrapper>
-      {currentSteps !== 5 && <FormHeader title={title} subtitle={subtitle} />}
-      <FormBody currentSteps={currentSteps}/>
+      <SubWrapper>
+        {currentSteps !== 5 && <FormHeader title={title} subtitle={subtitle} />}
+        <FormBody currentSteps={currentSteps} />
+      </SubWrapper>
       {currentSteps !== 5 && (
         <ActionWrapper>
-          <Button>Go Back</Button>
-          <Button
+          {currentSteps !== 1 && <Button>Go Back</Button>}
+          <ButtonNext
             variant={currentSteps === 4 ? "submit" : "continue"}
             type="submit"
           >
             {currentSteps === 4 ? "Confirm" : "Next Step"}
-          </Button>
+          </ButtonNext>
         </ActionWrapper>
       )}
     </Wrapper>

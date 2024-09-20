@@ -17,4 +17,13 @@ export const Wrapper = styled.div`
   ${MEDIA_QUERIES["tablet"]} {
     padding: 45px 20px;
   }
+
+  ${MEDIA_QUERIES["mobile"]} {
+    justify-content: center;
+    flex-direction: row;
+    flex: 0 1 25%;
+    border-radius: 0;
+    background-image: url("/images/bg-sidebar-mobile.svg");
+    gap: 10px;
+  }
 `;
