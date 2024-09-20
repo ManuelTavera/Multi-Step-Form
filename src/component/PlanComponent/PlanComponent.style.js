@@ -44,6 +44,10 @@ export const Title = styled.p`
 export const Pricing = styled.p`
   font-size: 1rem;
   color: ${COLORS["coolGray"]};
+
+  ${MEDIA_QUERIES["mobile"]} {
+    font-size: ${14 / 16}rem;
+  }
 `;
 
 export const RadioButton = styled.input`
