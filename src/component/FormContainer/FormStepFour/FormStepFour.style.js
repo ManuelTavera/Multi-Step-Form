@@ -1,5 +1,5 @@
 "use client";
-import { COLORS } from "@/constant";
+import { COLORS, MEDIA_QUERIES } from "@/constant";
 import styled from "styled-components";
 
 import Button from "@/component/Button";
@@ -14,6 +14,10 @@ export const SubWrapper = styled(Wrapper)`
   justify-content: space-between;
   background: none;
   align-items: center;
+
+  ${MEDIA_QUERIES["mobile"]} {
+    padding-bottom: 0;
+  }
 `;
 
 export const DescriptionWrapper = styled.div`
@@ -68,6 +72,11 @@ export const Line = styled.hr`
   opacity: 0.5;
   margin-top: 20px;
   margin-bottom: 20px;
+
+  ${MEDIA_QUERIES["mobile"]} {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 `;
 
 export const TotalText = styled.p`
@@ -79,4 +88,8 @@ export const TotalPrice = styled.p`
   color: ${COLORS["purplishBlue"]};
   font-size: ${24 / 16}rem;
   font-weight: bold;
+
+  ${MEDIA_QUERIES["mobile"]} {
+    font-size: ${18 / 16}rem;
+  }
 `;

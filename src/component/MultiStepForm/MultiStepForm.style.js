@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
     overflow: initial;
     padding: 0;
     max-height: none;
-    background-color: ${COLORS["lightBlue"]};
+    background-color: ${COLORS["alabaster"]};
     flex-direction: column;
   }
 `;

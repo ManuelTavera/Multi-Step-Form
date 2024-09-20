@@ -28,24 +28,22 @@ const HEADING_COPIES = {
   },
 };
 
-function FormContainer() {
-  const currentSteps = 3;
-
-  const { title, subtitle } = HEADING_COPIES[currentSteps];
+function FormContainer({ currentStep }) {
+  const { title, subtitle } = HEADING_COPIES[currentStep];
   return (
     <Wrapper>
       <SubWrapper>
-        {currentSteps !== 5 && <FormHeader title={title} subtitle={subtitle} />}
-        <FormBody currentSteps={currentSteps} />
+        {currentStep !== 5 && <FormHeader title={title} subtitle={subtitle} />}
+        <FormBody currentStep={currentStep} />
       </SubWrapper>
-      {currentSteps !== 5 && (
+      {currentStep !== 5 && (
         <ActionWrapper>
-          {currentSteps !== 1 && <Button>Go Back</Button>}
+          {currentStep !== 1 && <Button>Go Back</Button>}
           <ButtonNext
-            variant={currentSteps === 4 ? "submit" : "continue"}
+            variant={currentStep === 4 ? "submit" : "continue"}
             type="submit"
           >
-            {currentSteps === 4 ? "Confirm" : "Next Step"}
+            {currentStep === 4 ? "Confirm" : "Next Step"}
           </ButtonNext>
         </ActionWrapper>
       )}

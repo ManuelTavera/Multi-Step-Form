@@ -44,7 +44,7 @@ export const InfoWrapper = styled.span`
   flex: 1;
 
   ${MEDIA_QUERIES["mobile"]}{
-    margin-left: 10px;
+    margin-left: 14px;
     margin-right: 10px;
   }
 `;
@@ -55,7 +55,7 @@ export const AddOnName = styled.span`
   font-size: 1rem;
 
   ${MEDIA_QUERIES["mobile"]}{
-    font-size: ${14 / 16}rem;
+    font-size: ${15 / 16}rem;
   }
 `;
 
@@ -64,7 +64,7 @@ export const AddOnDescription = styled.span`
   color: ${COLORS["coolGray"]};
 
   ${MEDIA_QUERIES["mobile"]}{
-    font-size: ${12 / 16}rem;
+    font-size: ${13 / 16}rem;
   }
 `;
 
@@ -72,6 +72,6 @@ export const Pricing = styled.span`
   color: ${COLORS["purplishBlue"]};
 
   ${MEDIA_QUERIES["mobile"]}{
-    font-size: ${13 / 16}rem;
+    font-size: ${14 / 16}rem;
   }
 `;

@@ -1,5 +1,5 @@
 "use client";
-import { COLORS } from "@/constant";
+import { COLORS, MEDIA_QUERIES } from "@/constant";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -8,10 +8,19 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex: 1;
+
+  ${MEDIA_QUERIES["mobile"]} {
+    padding: 35px 5px;
+  }
 `;
 
 export const ImageWrapper = styled.div`
-    margin-bottom: 28px;
+  margin-bottom: 28px;
+
+  ${MEDIA_QUERIES["mobile"]} {
+    width: 70px;
+    height: 70px;
+  }
 `;
 
 export const Heading = styled.h1`

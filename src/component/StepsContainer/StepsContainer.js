@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Wrapper } from "./StepsContainer.style";
 import StepsButton from "../StepsButton";
@@ -10,20 +10,18 @@ const ALL_STEPS = [
   { step: 4, title: "SUMMARY" },
 ];
 
-function StepsContainer() {
-  const [selectedStep, setSelectedStep] = useState(1);
-
+function StepsContainer({ currentStep, handleCurrentStep }) {
   return (
     <Wrapper>
       {ALL_STEPS.map(({ step, title }) => {
-        const isActive = selectedStep === step;
+        const isActive = currentStep === step;
         return (
           <StepsButton
             key={step}
             step={step}
             title={title}
             isActive={isActive}
-            onClick={() => setSelectedStep(step)}
+            onClick={() => handleCurrentStep(step)}
           />
         );
       })}

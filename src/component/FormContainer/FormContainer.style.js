@@ -26,9 +26,10 @@ export const SubWrapper = styled.div`
     margin-top: -100px;
     border-radius: 10px;
     overflow: hidden;
-    padding: 0 30px;
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding: 30px 20px;
+    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+      0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
   }
 `;
 
@@ -38,7 +39,7 @@ export const ActionWrapper = styled.div`
 
   ${MEDIA_QUERIES["mobile"]} {
     background-color: ${COLORS["white"]};
-    padding: 20px
+    padding: 20px;
   }
 `;
 

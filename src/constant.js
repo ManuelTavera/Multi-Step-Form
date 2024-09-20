@@ -9,6 +9,7 @@ export const COLORS = {
   magnolia: "hsl(217, 100%, 97%)",
   alabaster: "hsl(231, 100%, 99%)",
   white: "hsl(0, 0%, 100%)",
+  black:  "hsl(0, 0%, 0%)",
 };
 
 export const BREAKPOINTS = {

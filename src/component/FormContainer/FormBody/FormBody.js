@@ -7,14 +7,14 @@ import FormStepThree from "../FormStepThree";
 import FormStepFour from "../FormStepFour";
 import FormStepFive from "../FormStepFive";
 
-function FormBody({ currentSteps }) {
+function FormBody({ currentStep }) {
   return (
     <Wrapper>
-      {currentSteps === 1 && <FormStepOne />}
-      {currentSteps === 2 && <FormStepTwo />}
-      {currentSteps === 3 && <FormStepThree />}
-      {currentSteps === 4 && <FormStepFour />}
-      {currentSteps === 5 && <FormStepFive />}
+      {currentStep === 1 && <FormStepOne />}
+      {currentStep === 2 && <FormStepTwo />}
+      {currentStep === 3 && <FormStepThree />}
+      {currentStep === 4 && <FormStepFour />}
+      {currentStep === 5 && <FormStepFive />}
     </Wrapper>
   );
 }
