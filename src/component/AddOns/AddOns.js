@@ -9,12 +9,12 @@ import {
   Pricing,
 } from "./AddOns.style";
 
-function AddOns({ name, description, pricing }) {
+function AddOns({ label, description, pricing }) {
   return (
     <Wrapper>
       <Checkbox type="checkbox" />
       <InfoWrapper>
-        <AddOnName>{name}</AddOnName>
+        <AddOnName>{label}</AddOnName>
         <AddOnDescription>{description}</AddOnDescription>
       </InfoWrapper>
       <Pricing>{pricing}</Pricing>
