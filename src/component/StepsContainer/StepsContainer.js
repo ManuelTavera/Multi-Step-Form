@@ -2,6 +2,7 @@ import React from "react";
 
 import { Wrapper } from "./StepsContainer.style";
 import StepsButton from "../StepsButton";
+import { StepsContext } from "../FormContainer/FormProvider";
 
 const ALL_STEPS = [
   { step: 1, title: "YOUR INFO" },
@@ -10,7 +11,9 @@ const ALL_STEPS = [
   { step: 4, title: "SUMMARY" },
 ];
 
-function StepsContainer({ currentStep, handleCurrentStep }) {
+function StepsContainer() {
+  const { currentStep, handleCurrentStepWithValidation } =
+    React.useContext(StepsContext);
   return (
     <Wrapper>
       {ALL_STEPS.map(({ step, title }) => {
@@ -21,7 +24,7 @@ function StepsContainer({ currentStep, handleCurrentStep }) {
             step={step}
             title={title}
             isActive={isActive}
-            onClick={() => handleCurrentStep(step)}
+            onClick={() => handleCurrentStepWithValidation(step)}
           />
         );
       })}

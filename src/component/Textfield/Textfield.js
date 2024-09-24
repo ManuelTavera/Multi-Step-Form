@@ -1,16 +1,26 @@
 import React, { useId } from "react";
 
-import { Wrapper, Label, Input } from "./Textfield.style";
+import {
+  Wrapper,
+  Label,
+  Input,
+  LabelWrapper,
+  ErrorText,
+} from "./Textfield.style";
 
-function Textfield({ label, ...rest }) {
+const Textfield = React.forwardRef(function ({ label, ...props }, ref) {
+  const { errorMessage, ...rest } = props;
   const id = useId();
 
   return (
     <Wrapper>
-      <Label htmlFor={id}>{label}</Label>
-      <Input id={id} {...rest} />
+      <LabelWrapper>
+        <Label htmlFor={id}>{label}</Label>
+        {errorMessage && <ErrorText>{errorMessage}</ErrorText>}
+      </LabelWrapper>
+      <Input id={id} {...rest} ref={ref} $hasError={Boolean(errorMessage)} />
     </Wrapper>
   );
-}
+});
 
 export default Textfield;

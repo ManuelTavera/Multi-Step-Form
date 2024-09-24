@@ -16,10 +16,25 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   border-radius: 5px;
-  border: 1px solid ${COLORS["lightGray"]};
   padding: 10px;
+  border: 1px solid ${COLORS["lightGray"]};
 
   &:focus {
     outline: 1px solid ${COLORS["purplishBlue"]};
   }
+
+  &:invalid {
+    outline: 1px solid ${COLORS["strawberryRed"]};
+  }
+`;
+
+export const LabelWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const ErrorText = styled.p`
+  color: ${COLORS["strawberryRed"]};
+  font-size: ${14 / 16}rem;
+  font-weight: 700;
 `;

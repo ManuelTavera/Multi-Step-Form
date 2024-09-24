@@ -9,6 +9,8 @@ import {
 } from "./FormContainer.style";
 import FormBody from "./FormBody";
 import FormHeader from "./FormHeader";
+import { StepsContext } from "../FormContainer/FormProvider";
+import { useFormContext } from "react-hook-form";
 
 const HEADING_COPIES = {
   1: {
@@ -33,10 +35,24 @@ const HEADING_COPIES = {
   },
 };
 
-function FormContainer({ currentStep }) {
+function FormContainer() {
+  const { currentStep, handleCurrentStep } = React.useContext(StepsContext);
   const { title, subtitle } = HEADING_COPIES[currentStep];
+  const { handleSubmit } = useFormContext();
+
+  const onSubmit = handleSubmit((data) => {
+    let _currentStep = currentStep + 1;
+    _currentStep = _currentStep > 5 ? 5 : _currentStep;
+
+    if (_currentStep === 5) {
+      // finish form
+    } else {
+      handleCurrentStep(_currentStep);
+    }
+  });
+
   return (
-    <Wrapper onSubmit={(e) => e.preventDefault()}>
+    <Wrapper onSubmit={onSubmit}>
       <SubWrapper>
         {currentStep !== 5 && <FormHeader title={title} subtitle={subtitle} />}
         <FormBody currentStep={currentStep} />
