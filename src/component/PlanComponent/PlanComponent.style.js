@@ -20,6 +20,10 @@ export const Wrapper = styled.div`
     outline-offset: 2px;
   }
 
+  &:has(> input:invalid) {
+    border: 1px solid ${COLORS["strawberryRed"]};
+  }
+
   ${MEDIA_QUERIES["tablet"]} {
     flex-direction: row;
     align-items: center;
@@ -55,4 +59,10 @@ export const RadioButton = styled.input`
   opacity: 0;
   inset: 0;
   cursor: pointer;
+`;
+
+export const Trial = styled.p`
+  font-size: ${12 / 16}rem;
+  color: ${COLORS["marineBlue"]};
+  margin-top: 5px;
 `;

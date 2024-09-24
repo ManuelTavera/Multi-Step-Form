@@ -6,9 +6,13 @@ import {
   Title,
   Pricing,
   RadioButton,
+  Trial,
 } from "./PlanComponent.style";
 
-function PlanComponent({ title, pricing, img, name }) {
+const PlanComponent = React.forwardRef(function (
+  { title, pricing, img, name, trial, ...rest },
+  ref
+) {
   return (
     <Wrapper>
       <IconWrapper>
@@ -17,10 +21,11 @@ function PlanComponent({ title, pricing, img, name }) {
       <div>
         <Title>{title}</Title>
         <Pricing>{pricing}</Pricing>
+        <Trial>{trial}</Trial>
       </div>
-      <RadioButton type="radio" name={name} />
+      <RadioButton type="radio" name={name} ref={ref} {...rest} />
     </Wrapper>
   );
-}
+});
 
 export default PlanComponent;

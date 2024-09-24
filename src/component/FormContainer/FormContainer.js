@@ -51,6 +51,13 @@ function FormContainer() {
     }
   });
 
+  const goBack = () => {
+    let _currentStep = currentStep - 1;
+    _currentStep = _currentStep < 1 ? 1 : _currentStep;
+
+    handleCurrentStep(_currentStep);
+  };
+
   return (
     <Wrapper onSubmit={onSubmit}>
       <SubWrapper>
@@ -59,7 +66,7 @@ function FormContainer() {
       </SubWrapper>
       {currentStep !== 5 && (
         <ActionWrapper>
-          {currentStep !== 1 && <Button>Go Back</Button>}
+          {currentStep !== 1 && <Button onClick={goBack}>Go Back</Button>}
           <ButtonNext
             variant={currentStep === 4 ? "submit" : "continue"}
             type="submit"

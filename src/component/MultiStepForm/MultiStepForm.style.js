@@ -14,6 +14,9 @@ export const Wrapper = styled.div`
   padding: 20px;
   display: flex;
   margin: 0 30px;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
 
   ${MEDIA_QUERIES["mobile"]} {
     margin: 0;
@@ -23,5 +26,6 @@ export const Wrapper = styled.div`
     max-height: none;
     background-color: ${COLORS["alabaster"]};
     flex-direction: column;
+    box-shadow: none;
   }
 `;

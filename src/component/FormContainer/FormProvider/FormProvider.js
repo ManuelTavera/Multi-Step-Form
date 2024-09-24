@@ -7,6 +7,8 @@ export const INITIAL_VALUES = {
   name: "",
   email: "",
   phone: "",
+  plan: "",
+  planType: "monthly",
 };
 
 function FormProvider({ children }) {
