@@ -9,10 +9,13 @@ import {
   Pricing,
 } from "./AddOns.style";
 
-function AddOns({ label, description, pricing }) {
+const AddOns = React.forwardRef(function (
+  { label, description, pricing, ...rest },
+  ref
+) {
   return (
     <Wrapper>
-      <Checkbox type="checkbox" />
+      <Checkbox type="checkbox" {...rest} ref={ref} />
       <InfoWrapper>
         <AddOnName>{label}</AddOnName>
         <AddOnDescription>{description}</AddOnDescription>
@@ -20,6 +23,6 @@ function AddOns({ label, description, pricing }) {
       <Pricing>{pricing}</Pricing>
     </Wrapper>
   );
-}
+});
 
 export default AddOns;

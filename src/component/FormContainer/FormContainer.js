@@ -66,7 +66,11 @@ function FormContainer() {
       </SubWrapper>
       {currentStep !== 5 && (
         <ActionWrapper>
-          {currentStep !== 1 && <Button onClick={goBack}>Go Back</Button>}
+          {currentStep !== 1 && (
+            <Button onClick={goBack} type="button">
+              Go Back
+            </Button>
+          )}
           <ButtonNext
             variant={currentStep === 4 ? "submit" : "continue"}
             type="submit"

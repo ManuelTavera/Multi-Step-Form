@@ -9,6 +9,7 @@ export const INITIAL_VALUES = {
   phone: "",
   plan: "",
   planType: "monthly",
+  addOns: [],
 };
 
 function FormProvider({ children }) {

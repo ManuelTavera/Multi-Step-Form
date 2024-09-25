@@ -10,6 +10,7 @@ import {
   Label,
 } from "./FormStepTwo.style";
 import PlanComponent from "@/component/PlanComponent";
+import { PLAN_PRICE } from "@/constant";
 
 const PLAN_LIST = [
   {
@@ -17,10 +18,10 @@ const PLAN_LIST = [
     value: "arcade",
     image: "/images/icon-arcade.svg",
     monthly: {
-      price: "$9/mo",
+      price: `$${PLAN_PRICE.monthly.arcade}/mo`,
     },
     yearly: {
-      price: "$90/yr",
+      price: `$${PLAN_PRICE.yearly.arcade}/yr`,
       trial: "2 months free",
     },
   },
@@ -29,10 +30,10 @@ const PLAN_LIST = [
     value: "advanced",
     image: "/images/icon-advanced.svg",
     monthly: {
-      price: "$12/mo",
+      price: `$${PLAN_PRICE.monthly.advanced}/mo`,
     },
     yearly: {
-      price: "$120/yr",
+      price: `$${PLAN_PRICE.yearly.advanced}/yr`,
       trial: "2 months free",
     },
   },
@@ -41,10 +42,10 @@ const PLAN_LIST = [
     value: "pro",
     image: "/images/icon-pro.svg",
     monthly: {
-      price: "$15/mo",
+      price: `$${PLAN_PRICE.monthly.pro}/mo`,
     },
     yearly: {
-      price: "$150/yr",
+      price: `$${PLAN_PRICE.yearly.pro}/yr`,
       trial: "2 months free",
     },
   },
