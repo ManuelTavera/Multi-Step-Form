@@ -1,5 +1,6 @@
 import "./style.css";
 import { Ubuntu } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import StyledComponentsRegistry from "@/component/StyledComponentsRegistry";
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={ubuntuFont.className}>
       <body>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <SpeedInsights />
       </body>
     </html>
   );
