@@ -22,7 +22,7 @@ function FormProvider({ children }) {
 
   const handleCurrentStepWithValidation = React.useCallback(
     async (step) => {
-      if (currentStep === step) return;
+      if (currentStep === step || currentStep === 5) return;
 
       const { trigger } = methods;
 

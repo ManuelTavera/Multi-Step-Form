@@ -14,10 +14,19 @@ const ALL_STEPS = [
 function StepsContainer() {
   const { currentStep, handleCurrentStepWithValidation } =
     React.useContext(StepsContext);
+
+  const handleIsActive = (step) => {
+    if (step === 4 && currentStep === 5) {
+      return true;
+    }
+
+    return currentStep === step;
+  };
+
   return (
     <Wrapper>
       {ALL_STEPS.map(({ step, title }) => {
-        const isActive = currentStep === step;
+        const isActive = handleIsActive(step);
         return (
           <StepsButton
             key={step}

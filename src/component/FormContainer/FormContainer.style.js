@@ -22,6 +22,7 @@ export const Wrapper = styled.form`
 export const SubWrapper = styled.div`
   flex: 1;
   display: flex;
+  flex-direction: column;
   ${MEDIA_QUERIES["mobile"]} {
     display: block;
     flex: none;
