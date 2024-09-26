@@ -17,11 +17,12 @@ import {
   TotalPrice,
   PlanPrice,
 } from "./FormStepFour.style";
-
+import { StepsContext } from "../FormProvider";
 import { ADD_ONS_PRICE, PLAN_PRICE } from "@/constant";
 
 function FormStepFour() {
   const { getValues } = useFormContext();
+  const { handleCurrentStep } = React.useContext(StepsContext);
   const [planType, plan, addOns] = getValues(["planType", "plan", "addOns"]);
 
   const priceSuffix = planType === "monthly" ? "mo" : "yr";
@@ -36,7 +37,7 @@ function FormStepFour() {
             <Text>
               {plan} ({planType})
             </Text>
-            <LinkButton>Change</LinkButton>
+            <LinkButton onClick={() => handleCurrentStep(2)}>Change</LinkButton>
           </PlanWrapper>
           <PlanPrice>
             ${planPrice}/{priceSuffix}
