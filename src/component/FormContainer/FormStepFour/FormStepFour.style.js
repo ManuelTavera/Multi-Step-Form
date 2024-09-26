@@ -46,6 +46,11 @@ export const Text = styled.p`
   font-size: 1rem;
   color: ${COLORS["marineBlue"]};
   font-weight: 700;
+  text-transform: capitalize;
+`;
+
+export const PlanPrice = styled(Text)`
+  text-transform: none;
 `;
 
 export const AddOnName = styled.p`

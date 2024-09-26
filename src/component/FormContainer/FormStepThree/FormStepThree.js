@@ -42,22 +42,45 @@ const ADD_ONS = [
 ];
 
 function FormStepThree() {
-  const { register, watch } = useFormContext();
-  const planType = watch("planType");
+  const { getValues, watch, setValue } = useFormContext();
+  const planType = getValues("planType");
+  const addOns = watch("addOns");
+
+  const checkValue = (value) => {
+    let isPresent = false;
+    for (let index = 0; index < addOns.length; index++) {
+      const element = addOns[index];
+      if (element.value === value) {
+        isPresent = true;
+      }
+    }
+
+    return isPresent;
+  };
 
   return (
     <Wrapper>
-      {ADD_ONS.map(({ label, description, value, ...rest }) => (
-        <AddOns
-          label={label}
-          description={description}
-          pricing={rest[planType].pricing}
-          key={value}
-          value={value}
-          name="addOns"
-          {...register("addOns")}
-        />
-      ))}
+      {ADD_ONS.map(({ label, description, value, ...rest }) => {
+        return (
+          <AddOns
+            label={label}
+            description={description}
+            pricing={rest[planType].pricing}
+            key={value}
+            value={value}
+            name="addOns"
+            onChange={(e) => {
+              if (e.target.checked) {
+                setValue("addOns", [...addOns, { value, label }]);
+              } else {
+                const newAddOns = addOns.filter((item) => item.value !== value);
+                setValue("addOns", newAddOns);
+              }
+            }}
+            checked={checkValue(value)}
+          />
+        );
+      })}
     </Wrapper>
   );
 }

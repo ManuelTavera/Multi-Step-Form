@@ -20,7 +20,11 @@ export const Wrapper = styled.form`
 `;
 
 export const SubWrapper = styled.div`
+  flex: 1;
+  display: flex;
   ${MEDIA_QUERIES["mobile"]} {
+    display: block;
+    flex: none;
     background-color: ${COLORS["white"]};
     margin: 0px 15px;
     margin-top: -75px;

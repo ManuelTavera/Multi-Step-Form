@@ -1,4 +1,5 @@
 import React from "react";
+import { useFormContext } from "react-hook-form";
 
 import {
   Wrapper,
@@ -14,34 +15,59 @@ import {
   TotalText,
   SubWrapper,
   TotalPrice,
+  PlanPrice,
 } from "./FormStepFour.style";
 
+import { ADD_ONS_PRICE, PLAN_PRICE } from "@/constant";
+
 function FormStepFour() {
+  const { getValues } = useFormContext();
+  const [planType, plan, addOns] = getValues(["planType", "plan", "addOns"]);
+
+  const priceSuffix = planType === "monthly" ? "mo" : "yr";
+  const planPrice = PLAN_PRICE[planType][plan];
+  let addOnsPrice = 0;
+
   return (
     <>
       <Wrapper>
         <DescriptionWrapper>
           <PlanWrapper>
-            <Text>Arcade (Monthly)</Text>
+            <Text>
+              {plan} ({planType})
+            </Text>
             <LinkButton>Change</LinkButton>
           </PlanWrapper>
-          <Text>$9/mo</Text>
+          <PlanPrice>
+            ${planPrice}/{priceSuffix}
+          </PlanPrice>
         </DescriptionWrapper>
-        <Line />
-        <AddOnsWrapper>
-          <AddOnsRow>
-            <AddOnName>Online service</AddOnName>
-            <AddOnPrice>+$1/mo</AddOnPrice>
-          </AddOnsRow>
-          <AddOnsRow>
-            <AddOnName>Larger storage</AddOnName>
-            <AddOnPrice>+$2/mo</AddOnPrice>
-          </AddOnsRow>
-        </AddOnsWrapper>
+        {addOns.length > 0 && (
+          <>
+            <Line />
+            <AddOnsWrapper>
+              {addOns.map(({ value, label }) => {
+                addOnsPrice += ADD_ONS_PRICE[planType][value];
+                return (
+                  <AddOnsRow key={value}>
+                    <AddOnName>{label}</AddOnName>
+                    <AddOnPrice>
+                      +${ADD_ONS_PRICE[planType][value]}/{priceSuffix}
+                    </AddOnPrice>
+                  </AddOnsRow>
+                );
+              })}
+            </AddOnsWrapper>
+          </>
+        )}
       </Wrapper>
       <SubWrapper>
-        <TotalText>Total (per month)</TotalText>
-        <TotalPrice>+$12/mo</TotalPrice>
+        <TotalText>
+          Total (per {planType === "monthly" ? "month" : "year"})
+        </TotalText>
+        <TotalPrice>
+          +${planPrice + addOnsPrice}/{priceSuffix}
+        </TotalPrice>
       </SubWrapper>
     </>
   );

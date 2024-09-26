@@ -45,10 +45,10 @@ function FormContainer() {
     _currentStep = _currentStep > 5 ? 5 : _currentStep;
 
     if (_currentStep === 5) {
-      // finish form
-    } else {
-      handleCurrentStep(_currentStep);
+      console.log({ data });
     }
+
+    handleCurrentStep(_currentStep);
   });
 
   const goBack = () => {

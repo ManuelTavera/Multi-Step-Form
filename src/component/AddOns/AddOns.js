@@ -15,7 +15,7 @@ const AddOns = React.forwardRef(function (
 ) {
   return (
     <Wrapper>
-      <Checkbox type="checkbox" {...rest} ref={ref} />
+      <Checkbox type="checkbox" ref={ref} {...rest} />
       <InfoWrapper>
         <AddOnName>{label}</AddOnName>
         <AddOnDescription>{description}</AddOnDescription>
