@@ -16,7 +16,7 @@ const PlanComponent = React.forwardRef(function (
   return (
     <Wrapper>
       <IconWrapper>
-        <img src={img} />
+        <img src={img} alt={`Image ${title}`} />
       </IconWrapper>
       <div>
         <Title>{title}</Title>
@@ -27,5 +27,7 @@ const PlanComponent = React.forwardRef(function (
     </Wrapper>
   );
 });
+
+PlanComponent.displayName = "PlanComponent";
 
 export default PlanComponent;

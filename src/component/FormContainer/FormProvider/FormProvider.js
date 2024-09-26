@@ -32,7 +32,7 @@ function FormProvider({ children }) {
         setCurrentStep(step);
       }
     },
-    [methods.trigger, currentStep]
+    [methods, currentStep]
   );
 
   const handleCurrentStep = React.useCallback((step) => {

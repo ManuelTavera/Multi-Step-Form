@@ -25,4 +25,6 @@ const AddOns = React.forwardRef(function (
   );
 });
 
+AddOns.displayName = "AddOns";
+
 export default AddOns;

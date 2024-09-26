@@ -23,4 +23,6 @@ const Textfield = React.forwardRef(function ({ label, ...props }, ref) {
   );
 });
 
+Textfield.displayName = "Textfield";
+
 export default Textfield;
